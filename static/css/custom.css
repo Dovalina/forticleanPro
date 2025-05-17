@@ -3,11 +3,13 @@
 /* Make the main content fill the viewport height for a cleaner look */
 html, body {
     height: 100%;
+    background-color: #ffffff;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    color: #333;
 }
 
 /* Add subtle hover effect to table rows */
