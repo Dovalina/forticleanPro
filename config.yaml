@@ -1,9 +1,32 @@
 database:
-  driver: Firebird/InterBase(r) driver
-  dsn: localhost:C:/path/to/database.fdb
+  # Configuración de conexión a la base de datos Firebird
+  driver: Firebird
+  # Formato recomendado para la ruta: servidor:ruta_completa.fdb
+  # Por ejemplo: 192.168.1.100:C:/Microsip/EMPRESA1.FDB o localhost:C:/Microsip/EMPRESA1.FDB
+  dsn: localhost:C:/Microsip/EMPRESA.FDB
   user: SYSDBA
   password: masterkey
-  charset: UTF8
+  charset: WIN1252
+  # Query personalizada para obtener los pedidos pendientes
+  # Actualizar según la estructura real de la base de datos
+  query: >
+    SELECT 
+      p.PEDIDO AS pedido,
+      c.NOMBRE AS cliente,
+      p.FECHA AS fecha,
+      p.HORA AS hora,
+      v.NOMBRE AS vendedora,
+      p.ESTATUS AS estatus
+    FROM 
+      PEDIDOS p
+    JOIN 
+      CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
+    JOIN
+      VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
+    WHERE 
+      p.ESTATUS = 'P' OR p.ESTATUS = 'En proceso'
+    ORDER BY 
+      p.FECHA DESC, p.HORA DESC
 application:
   refresh_interval: 300
   title: Dashboard de Pedidos Pendientes

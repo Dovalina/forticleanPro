@@ -6,6 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "email-validator>=2.2.0",
     "fdb>=2.0.3",
+    "firebird-driver>=2.0.1",
     "flask>=3.1.1",
     "flask-sqlalchemy>=3.1.1",
     "gunicorn>=23.0.0",
