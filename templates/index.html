@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config['application']['title'] }}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="py-3 border-bottom">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h2 mb-0">
+                    <i class="fas fa-clipboard-list me-2"></i>
+                    {{ config['application']['title'] }}
+                </h1>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-clock me-1"></i>
+                        <span id="current-time"></span>
+                    </div>
+                    <div>
+                        <i class="fas fa-sync-alt me-1"></i>
+                        Última actualización: <span id="last-updated">{{ last_updated }}</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="py-4">
+            <!-- Status summary cards -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title text-muted mb-1">Total Pedidos</h6>
+                                    <h2 class="mb-0" id="total-orders">{{ orders|length }}</h2>
+                                </div>
+                                <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                    <i class="fas fa-shopping-cart fa-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-warning">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title text-muted mb-1">Pedidos En Proceso</h6>
+                                    <h2 class="mb-0" id="process-orders">0</h2>
+                                </div>
+                                <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                    <i class="fas fa-sync fa-2x text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-success">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title text-muted mb-1">Tiempo de Refresco</h6>
+                                    <h2 class="mb-0"><span id="refresh-countdown">5:00</span> min</h2>
+                                </div>
+                                <div class="bg-success bg-opacity-10 p-3 rounded">
+                                    <i class="fas fa-sync-alt fa-2x text-success"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert for connection status -->
+            <div id="connection-alert" class="alert alert-danger d-none">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <span id="connection-message">Error de conexión a la base de datos.</span>
+            </div>
+
+            <!-- Orders table -->
+            <div class="card">
+                <div class="card-header bg-secondary bg-opacity-10">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list me-2"></i>
+                        Pedidos Pendientes de Surtir
+                    </h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="orders-table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">PEDIDO</th>
+                                    <th scope="col">CLIENTE</th>
+                                    <th scope="col">FECHA</th>
+                                    <th scope="col">HORA</th>
+                                    <th scope="col">VENDEDORA</th>
+                                    <th scope="col">ESTATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if orders %}
+                                    {% for order in orders %}
+                                    <tr>
+                                        <td><strong>{{ order.pedido }}</strong></td>
+                                        <td>{{ order.cliente }}</td>
+                                        <td>{{ order.fecha|formatdate("%d/%m") }}</td>
+                                        <td>{{ order.hora }}</td>
+                                        <td>{{ order.vendedora }}</td>
+                                        <td>
+                                            {% if order.estatus == 'Pendiente' %}
+                                                <span class="status-indicator yellow">●</span> {{ order.estatus }}
+                                            {% elif order.estatus == 'En proceso' %}
+                                                <span class="status-indicator orange">●</span> {{ order.estatus }}
+                                            {% elif order.estatus == 'Terminado' %}
+                                                <span class="status-indicator green">✓</span> {{ order.estatus }}
+                                            {% else %}
+                                                <span class="status-indicator">●</span> {{ order.estatus }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="6" class="text-center py-4">
+                                            <div class="py-5">
+                                                <i class="fas fa-clipboard-check fa-3x mb-3 text-muted"></i>
+                                                <p class="mb-0">No hay pedidos pendientes</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="py-3 mt-4 border-top">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="text-muted mb-0">&copy; 2025 Sistema de Pedidos Pendientes</p>
+                <button class="btn btn-sm btn-primary" id="refresh-btn">
+                    <i class="fas fa-sync-alt me-1"></i> Actualizar Ahora
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script>
+        // Initialize dashboard with refresh interval from config
+        document.addEventListener('DOMContentLoaded', function() {
+            initDashboard({{ config['application']['refresh_interval'] }});
+        });
+    </script>
+</body>
+</html>

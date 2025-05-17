@@ -1,0 +1,9 @@
+database:
+  driver: Firebird/InterBase(r) driver
+  dsn: localhost:C:/path/to/database.fdb
+  user: SYSDBA
+  password: masterkey
+  charset: UTF8
+application:
+  refresh_interval: 300
+  title: Dashboard de Pedidos Pendientes

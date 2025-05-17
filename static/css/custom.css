@@ -1,0 +1,91 @@
+/* Custom styles for the dashboard application */
+
+/* Make the main content fill the viewport height for a cleaner look */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add subtle hover effect to table rows */
+.table-hover tbody tr:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* Style for the card hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styling for the refresh button pulse effect */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--bs-primary-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0);
+    }
+}
+
+#refresh-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Style for countdown when it's low */
+#refresh-countdown.low-time {
+    color: var(--bs-danger);
+    font-weight: bold;
+}
+
+/* Custom styling for the status indicators */
+.status-indicator {
+    font-size: 1.3em;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.status-indicator.yellow {
+    color: gold;
+}
+
+.status-indicator.orange {
+    color: orange;
+}
+
+.status-indicator.green {
+    color: #28a745;
+}
+
+/* Error page styling */
+.vh-100 {
+    min-height: 100vh;
+}
+
+/* Table styling to match screenshot */
+.table thead th {
+    font-weight: bold;
+    border-bottom: 2px solid var(--bs-border-color);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+}
+
+/* Make the table fill the available space */
+.table-responsive {
+    overflow-x: auto;
+    min-height: 400px;
+}
