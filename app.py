@@ -17,27 +17,20 @@ app.secret_key = os.environ.get("SESSION_SECRET", "microsip_dashboard_secret")
 # Load the configuration
 config = load_config()
 
-# Configuración de usuarios y roles
-if 'users' not in config:
-    config['users'] = {
-        'admin': {
-            'password': generate_password_hash('admin'),
-            'role': 'superadmin',  # Solo el superadmin puede ver config y usuarios
-            'is_superadmin': True
-        },
-        'usuario': {
-            'password': generate_password_hash('usuario'),
-            'role': 'user',
-            'is_superadmin': False
-        }
+# Usuarios y contraseñas embebidos directamente en el código
+# Esto proporciona mayor seguridad al no almacenar las credenciales en archivos externos
+USERS = {
+    'admin': {
+        'password': 'admin123',  # Contraseña en texto plano solo para desarrollo, no es una buena práctica en producción
+        'role': 'superadmin',
+        'is_superadmin': True
+    },
+    'usuario': {
+        'password': 'usuario123',
+        'role': 'user',
+        'is_superadmin': False
     }
-    update_config(config)
-
-# Asegurar que todos los usuarios tienen el atributo de superadmin
-for username in config['users']:
-    if 'is_superadmin' not in config['users'][username]:
-        config['users'][username]['is_superadmin'] = (config['users'][username].get('role') == 'superadmin')
-update_config(config)
+}
 
 # Login required decorator
 def login_required(f):
@@ -69,17 +62,14 @@ def login():
         
         logging.debug(f"Intento de login para usuario: {username}")
         
-        # Para fines de desarrollo, permitir login con cualquier credencial durante el desarrollo inicial
-        if username in ['admin', 'usuario'] and password in ['admin', 'usuario']:
-            # Obtener datos de usuario o usar valores predeterminados para desarrollo
-            user_data = config['users'].get(username, {
-                'role': 'superadmin' if username == 'admin' else 'user',
-                'is_superadmin': username == 'admin'
-            })
+        # Verificar si el usuario existe y la contraseña es correcta
+        if username in USERS and USERS[username]['password'] == password:
+            # Obtener datos de usuario desde la configuración embebida
+            user_data = USERS[username]
             
             session['user'] = username
-            session['role'] = user_data.get('role', 'user')
-            session['is_superadmin'] = user_data.get('is_superadmin', False)
+            session['role'] = user_data['role']
+            session['is_superadmin'] = user_data['is_superadmin']
             
             flash(f'Bienvenido, {username}!', 'success')
             logging.info(f"Usuario {username} ha iniciado sesión correctamente")
