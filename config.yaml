@@ -1,32 +1,18 @@
-database:
-  # Configuración de conexión a la base de datos Firebird
-  driver: Firebird
-  # Formato recomendado para la ruta: servidor:ruta_completa.fdb
-  # Por ejemplo: 192.168.1.100:C:/Microsip/EMPRESA1.FDB o localhost:C:/Microsip/EMPRESA1.FDB
-  dsn: localhost:C:/Microsip/EMPRESA.FDB
-  user: SYSDBA
-  password: masterkey
-  charset: WIN1252
-  # Query personalizada para obtener los pedidos pendientes
-  # Actualizar según la estructura real de la base de datos
-  query: >
-    SELECT 
-      p.PEDIDO AS pedido,
-      c.NOMBRE AS cliente,
-      p.FECHA AS fecha,
-      p.HORA AS hora,
-      v.NOMBRE AS vendedora,
-      p.ESTATUS AS estatus
-    FROM 
-      PEDIDOS p
-    JOIN 
-      CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
-    JOIN
-      VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
-    WHERE 
-      p.ESTATUS = 'P' OR p.ESTATUS = 'En proceso'
-    ORDER BY 
-      p.FECHA DESC, p.HORA DESC
 application:
   refresh_interval: 300
   title: Dashboard de Pedidos Pendientes
+database:
+  charset: WIN1252
+  driver: Firebird
+  dsn: localhost:C:/Microsip/EMPRESA.FDB
+  password: masterkey
+  query: "SELECT \n  p.PEDIDO AS pedido,\n  c.NOMBRE AS cliente,\n  p.FECHA AS fecha,\n\
+    \  p.HORA AS hora,\n  v.NOMBRE AS vendedora,\n  p.ESTATUS AS estatus\nFROM \n\
+    \  PEDIDOS p\nJOIN \n  CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID\nJOIN\n  VENDEDORES\
+    \ v ON p.VENDEDOR_ID = v.VENDEDOR_ID\nWHERE \n  p.ESTATUS = 'P' OR p.ESTATUS =\
+    \ 'En proceso'\nORDER BY \n  p.FECHA DESC, p.HORA DESC\n"
+  user: SYSDBA
+users:
+  admin:
+    password: scrypt:32768:8:1$HWJDHQaWaCH1bKo3$b2aac4a5d66c3279689c34779a281d3a2a3362b250df2b8dccd31ab52a5ee0e5b983bf7b44382fa3f0461eed31a4221e2a690c85a89af7d92969f068d3f22eeb
+    role: admin

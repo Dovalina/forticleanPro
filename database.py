@@ -1,8 +1,7 @@
 import logging
 import datetime
 from config import load_config
-import firebird.driver as fdb
-from firebird.driver import connect, connect_server
+import fdb  # Usando el paquete fdb para la conexión Firebird
 
 # Load the configuration
 config = load_config()
@@ -10,21 +9,21 @@ db_config = config['database']
 
 def create_connection():
     """
-    Create a connection to the Firebird database using firebird-driver
+    Create a connection to the Firebird database using fdb
     """
     try:
-        # Determine connection parameters
+        # Get connection parameters from config
         dsn_parts = db_config['dsn'].split(':')
         if len(dsn_parts) == 2:
-            host, path = dsn_parts
+            host, database = dsn_parts
         else:
             host = 'localhost'
-            path = db_config['dsn']
+            database = db_config['dsn']
             
-        # Connect using the firebird-driver connector
-        conn = connect(
+        # Connect using fdb
+        conn = fdb.connect(
             host=host,
-            database=path,
+            database=database,
             user=db_config['user'],
             password=db_config['password'],
             charset=db_config.get('charset', 'UTF8')
