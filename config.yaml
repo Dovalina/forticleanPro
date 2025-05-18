@@ -14,5 +14,8 @@ database:
   user: SYSDBA
 users:
   admin:
+    can_see_config: true
+    can_see_users: true
+    is_superadmin: false
     password: scrypt:32768:8:1$HWJDHQaWaCH1bKo3$b2aac4a5d66c3279689c34779a281d3a2a3362b250df2b8dccd31ab52a5ee0e5b983bf7b44382fa3f0461eed31a4221e2a690c85a89af7d92969f068d3f22eeb
     role: admin

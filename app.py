@@ -17,15 +17,27 @@ app.secret_key = os.environ.get("SESSION_SECRET", "microsip_dashboard_secret")
 # Load the configuration
 config = load_config()
 
-# Default admin credentials - should be changed after first login
+# Configuración de usuarios y roles
 if 'users' not in config:
     config['users'] = {
         'admin': {
             'password': generate_password_hash('admin'),
-            'role': 'admin'
+            'role': 'superadmin',  # Solo el superadmin puede ver config y usuarios
+            'is_superadmin': True
+        },
+        'usuario': {
+            'password': generate_password_hash('usuario'),
+            'role': 'user',
+            'is_superadmin': False
         }
     }
     update_config(config)
+
+# Asegurar que todos los usuarios tienen el atributo de superadmin
+for username in config['users']:
+    if 'is_superadmin' not in config['users'][username]:
+        config['users'][username]['is_superadmin'] = (config['users'][username].get('role') == 'superadmin')
+update_config(config)
 
 # Login required decorator
 def login_required(f):
@@ -58,6 +70,7 @@ def login():
         if username in config['users'] and check_password_hash(config['users'][username]['password'], password):
             session['user'] = username
             session['role'] = config['users'][username]['role']
+            session['is_superadmin'] = config['users'][username].get('is_superadmin', False)
             flash(f'Bienvenido, {username}!', 'success')
             return redirect(url_for('index'))
         else:
@@ -90,8 +103,11 @@ def index():
 
 @app.route('/configuracion', methods=['GET', 'POST'])
 @login_required
-@admin_required
 def configuracion():
+    # Verificar si el usuario es superadmin
+    if not session.get('is_superadmin', False):
+        flash('No tienes permisos para acceder a esta página', 'danger')
+        return redirect(url_for('index'))
     """Render and handle the configuration page."""
     if request.method == 'POST':
         try:
@@ -122,8 +138,11 @@ def configuracion():
 
 @app.route('/usuarios', methods=['GET', 'POST'])
 @login_required
-@admin_required
 def usuarios():
+    # Verificar si el usuario es superadmin
+    if not session.get('is_superadmin', False):
+        flash('No tienes permisos para acceder a esta página', 'danger')
+        return redirect(url_for('index'))
     """Manage users."""
     if request.method == 'POST':
         action = request.form.get('action')
