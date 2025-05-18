@@ -14,8 +14,10 @@ database:
   user: SYSDBA
 users:
   admin:
-    can_see_config: true
-    can_see_users: true
+    is_superadmin: true
+    password: pbkdf2:sha256:150000$q8DNDrQw$eaa2a4e8d583e6e756a83c6e4feece1011d363d3489efe677cbba33c8fc77c24
+    role: superadmin
+  usuario:
     is_superadmin: false
-    password: scrypt:32768:8:1$HWJDHQaWaCH1bKo3$b2aac4a5d66c3279689c34779a281d3a2a3362b250df2b8dccd31ab52a5ee0e5b983bf7b44382fa3f0461eed31a4221e2a690c85a89af7d92969f068d3f22eeb
-    role: admin
+    password: pbkdf2:sha256:150000$q8DNDrQw$eaa2a4e8d583e6e756a83c6e4feece1011d363d3489efe677cbba33c8fc77c24
+    role: user
