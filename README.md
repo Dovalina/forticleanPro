@@ -54,4 +54,5 @@ Para modificar la configuración del sistema:
 
 ---
 
-Desarrollo exclusivo para Verdeja Padel © 2025
+Desarrollo: Sergio Dovalina (checodovalina@gmail.com)
+Exclusivo para Verdeja Padel © 2025

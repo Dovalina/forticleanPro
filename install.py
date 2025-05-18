@@ -181,6 +181,7 @@ def finish_installation():
     print(f"  {YELLOW}Usuario normal:{END} usuario 'usuario', contraseña 'usuario123'")
     
     print(f"\n{BLUE}{BOLD}¡Gracias por usar el Dashboard de Pedidos Pendientes de Verdeja Padel!{END}")
+    print(f"\nDesarrollo: Sergio Dovalina (checodovalina@gmail.com)")
 
 def main():
     """Función principal del instalador"""
