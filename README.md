@@ -1,4 +1,4 @@
-# Dashboard de Pedidos Pendientes para Verdeja Padel
+# Dashboard de Pedidos Pendientes para Clic Laguna
 
 ## Descripción
 Este sistema permite visualizar en tiempo real los pedidos pendientes de surtir desde la base de datos Microsip, con actualizaciones automáticas cada 5 minutos.
@@ -55,4 +55,4 @@ Para modificar la configuración del sistema:
 ---
 
 Desarrollo: Sergio Dovalina (checodovalina@gmail.com)
-Exclusivo para Verdeja Padel © 2025
+Exclusivo para Clic Laguna © 2025

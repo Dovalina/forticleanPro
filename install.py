@@ -24,7 +24,7 @@ END = '\033[0m'
 def print_header():
     """Imprime el encabezado del instalador"""
     print(f"\n{BLUE}{BOLD}======================================================{END}")
-    print(f"{BLUE}{BOLD}  INSTALADOR DEL DASHBOARD DE PEDIDOS - VERDEJA PADEL  {END}")
+    print(f"{BLUE}{BOLD}  INSTALADOR DEL DASHBOARD DE PEDIDOS - CLIC LAGUNA  {END}")
     print(f"{BLUE}{BOLD}======================================================{END}\n")
 
 def check_python_version():
@@ -180,7 +180,7 @@ def finish_installation():
     print(f"  {YELLOW}Superadmin:{END} usuario 'admin', contraseña 'admin123'")
     print(f"  {YELLOW}Usuario normal:{END} usuario 'usuario', contraseña 'usuario123'")
     
-    print(f"\n{BLUE}{BOLD}¡Gracias por usar el Dashboard de Pedidos Pendientes de Verdeja Padel!{END}")
+    print(f"\n{BLUE}{BOLD}¡Gracias por usar el Dashboard de Pedidos Pendientes de Clic Laguna!{END}")
     print(f"\nDesarrollo: Sergio Dovalina (checodovalina@gmail.com)")
 
 def main():
