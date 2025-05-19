@@ -102,6 +102,50 @@ def guardar_json(pedidos, timestamp=None):
         logging.error(f"Error al guardar archivo JSON: {str(e)}")
         return None
 
+def solicitar_credenciales():
+    """Solicita credenciales de acceso al usuario"""
+    print("\nPor favor, proporciona las credenciales de acceso a la base de datos:")
+    servidor = input("Servidor (ej. localhost, IP o nombre de host): ")
+    ruta_bd = input("Ruta a la base de datos (ej. C:/Microsip/EMPRESA.FDB): ")
+    usuario = input("Usuario: ")
+    contrasena = input("Contraseña: ")
+    
+    # Validar entradas
+    if not servidor or not ruta_bd or not usuario or not contrasena:
+        print("Error: Todos los campos son obligatorios")
+        return None
+    
+    # Crear configuración temporal
+    config_temp = {
+        'database': {
+            'dsn': f"{servidor}:{ruta_bd}",
+            'user': usuario,
+            'password': contrasena,
+            'charset': 'UTF8',
+            'query': """
+                SELECT 
+                  p.PEDIDO AS pedido,
+                  c.NOMBRE AS cliente,
+                  p.FECHA AS fecha,
+                  p.HORA AS hora,
+                  v.NOMBRE AS vendedora,
+                  p.ESTATUS AS estatus
+                FROM 
+                  PEDIDOS p
+                JOIN 
+                  CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
+                JOIN
+                  VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
+                WHERE 
+                  p.ESTATUS = 'P' OR p.ESTATUS = 'En proceso'
+                ORDER BY 
+                  p.FECHA DESC, p.HORA DESC
+            """
+        }
+    }
+    
+    return config_temp
+
 def main():
     try:
         # Mostrar encabezado
@@ -112,8 +156,36 @@ def main():
         # Cargar configuración
         config = load_config()
         
-        # Conectar a la base de datos
-        connection = conectar_firebird(config)
+        # Intentar conexión inicial
+        try:
+            connection = conectar_firebird(config)
+        except Exception as e:
+            print(f"\nError al conectar a la base de datos: {str(e)}")
+            print("\nLas credenciales en el archivo de configuración no son válidas.")
+            
+            # Preguntar si desea intentar con otras credenciales
+            retry = input("\n¿Deseas intentar con otras credenciales? (s/n): ").lower()
+            if retry == 's':
+                nuevas_credenciales = solicitar_credenciales()
+                if nuevas_credenciales:
+                    # Actualizar configuración temporalmente
+                    config['database'] = nuevas_credenciales['database']
+                    
+                    # Preguntar si desea guardar
+                    guardar = input("\n¿Deseas guardar estas credenciales para usos futuros? (s/n): ").lower()
+                    if guardar == 's':
+                        from config import update_config
+                        update_config(config)
+                        print("Configuración actualizada y guardada.")
+                    
+                    # Intentar conectar con nuevas credenciales
+                    connection = conectar_firebird(config)
+                else:
+                    print("No se proporcionaron credenciales válidas.")
+                    sys.exit(1)
+            else:
+                print("Operación cancelada.")
+                sys.exit(1)
         
         # Obtener pedidos
         pedidos = obtener_pedidos(connection, config)
@@ -136,6 +208,7 @@ def main():
             
     except Exception as e:
         logging.error(f"Error inesperado: {str(e)}")
+        print(f"\nOcurrió un error inesperado: {str(e)}")
         sys.exit(1)
 
 if __name__ == "__main__":

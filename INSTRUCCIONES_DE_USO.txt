@@ -23,6 +23,7 @@ PARTE 1: EXPORTAR DATOS (EN TU MÁQUINA LOCAL)
    - Abre una terminal/cmd
    - Navega a la carpeta donde guardaste los archivos
    - Ejecuta: python exportar_datos.py
+   - Si hay problemas de conexión, el script te permitirá ingresar credenciales diferentes
 
 5. El script generará un archivo llamado "datos_pedidos.json" con los pedidos actuales
 
@@ -36,6 +37,25 @@ PARTE 2: VISUALIZAR DATOS (EN EL SERVIDOR WEB)
    - No necesitas reiniciar ni hacer ninguna configuración adicional
    - Los datos se mostrarán en el dashboard la próxima vez que se refresque
 
+NOTAS IMPORTANTES SOBRE LA CONEXIÓN
+----------------------------------
+
+Si recibes un error del tipo:
+"Your user name and password are not defined. Ask your database administrator to set up a Firebird login."
+
+Esto significa que:
+
+1. Las credenciales en el archivo de configuración no son correctas
+2. El usuario SYSDBA no tiene una contraseña establecida en ese servidor
+3. El Firebird Server está configurado para requerir autenticación adicional
+
+El script te permitirá introducir credenciales diferentes si falla la conexión inicial.
+Si sigues teniendo problemas, verifica con el administrador de la base de datos:
+
+- Que el usuario SYSDBA esté activo y tenga contraseña configurada
+- Que el servidor Firebird esté configurado para aceptar conexiones remotas
+- Que no haya ningún firewall bloqueando la conexión
+
 AUTOMATIZACIÓN (OPCIONAL)
 ------------------------
 
@@ -46,17 +66,6 @@ Para mantener los datos actualizados, puedes:
    - En Mac/Linux: Configurar un cron job
 
 2. Configurar la transferencia automática del archivo JSON al servidor web
-
-DATOS DE CONEXIÓN
-----------------
-
-El script está preconfigurado para conectarse a:
-- Servidor: forticlean.ddns.net
-- Base de datos: C:/Microsip/EMPRESA.FDB
-- Usuario: SYSDBA
-- Contraseña: 050587
-
-Si necesitas modificar estos valores, edita el archivo config.yaml antes de ejecutar el script.
 
 =====================================================
 Desarrollo: Sergio Dovalina (checodovalina@gmail.com)
