@@ -64,12 +64,20 @@ def test_connection():
 
 def get_pending_orders():
     """
-    Get pending orders from the Microsip database or from a JSON file
+    Get pending orders from the Microsip database, JSON file, or sample data
     """
     try:
-        conn = create_connection()
+        # Verificar si se debe usar datos de ejemplo (configuración)
+        from config import load_config
+        config = load_config()
+        
+        # Si está configurado para usar datos de ejemplo, retornarlos directamente
+        if config['database'].get('use_sample_data', False):
+            logging.info("Usando datos de ejemplo según configuración")
+            return _get_sample_orders()
         
         # Primer intento: conectar directamente a la base de datos
+        conn = create_connection()
         if conn is not None:
             cursor = conn.cursor()
             
@@ -142,28 +150,44 @@ def _get_sample_orders():
     
     orders = [
         {
-            'pedido': '#1245',
-            'cliente': 'Muma',
+            'pedido': '#2501',
+            'cliente': 'Distribuidora El Norte',
             'fecha': two_days_ago.date(),
-            'hora': '10:23',
-            'vendedora': 'Sofía',
+            'hora': '09:15',
+            'vendedora': 'María López',
             'estatus': 'Pendiente'
         },
         {
-            'pedido': '#1246',
-            'cliente': 'Oxxo Nte',
+            'pedido': '#2502',
+            'cliente': 'Supermercados González',
             'fecha': yesterday.date(),
-            'hora': '09:50',
-            'vendedora': 'Laura',
+            'hora': '10:05',
+            'vendedora': 'Juan Pérez',
             'estatus': 'En proceso'
         },
         {
-            'pedido': '#1247',
-            'cliente': 'Coca Torreón',
+            'pedido': '#2503',
+            'cliente': 'Tiendas Laguna',
+            'fecha': yesterday.date(),
+            'hora': '11:30',
+            'vendedora': 'Ana Morales',
+            'estatus': 'Pendiente'
+        },
+        {
+            'pedido': '#2504',
+            'cliente': 'Comercial del Bajío',
             'fecha': current_date.date(),
-            'hora': '11:05',
-            'vendedora': 'Diego',
-            'estatus': 'Terminado'
+            'hora': '08:45',
+            'vendedora': 'Carlos Sánchez',
+            'estatus': 'Pendiente'
+        },
+        {
+            'pedido': '#2505',
+            'cliente': 'Refaccionaria Torreón',
+            'fecha': current_date.date(),
+            'hora': '09:20',
+            'vendedora': 'Laura Torres',
+            'estatus': 'En proceso'
         }
     ]
     
