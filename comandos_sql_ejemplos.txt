@@ -1,0 +1,87 @@
+======================================================
+COMANDOS SQL PARA PROBAR LA CONEXIÓN A FIREBIRD
+======================================================
+
+1. CONEXIÓN DESDE ISQL (Herramienta de línea de comandos de Firebird)
+----------------------------------------------------------------
+
+Para conectarte a la base de datos desde la línea de comandos:
+
+isql -user SYSDBA -password 050587 forticlean.ddns.net:C:/Microsip/EMPRESA.FDB
+
+O desde dentro de ISQL:
+
+CONNECT "forticlean.ddns.net:C:/Microsip/EMPRESA.FDB" USER 'SYSDBA' PASSWORD '050587';
+
+
+2. CONSULTAS SQL ÚTILES PARA PROBAR
+----------------------------------
+
+# Verificar la conexión con una consulta simple
+SELECT CURRENT_TIMESTAMP FROM RDB$DATABASE;
+
+# Ver las tablas disponibles en la base de datos
+SELECT RDB$RELATION_NAME 
+FROM RDB$RELATIONS 
+WHERE RDB$SYSTEM_FLAG = 0 
+ORDER BY 1;
+
+# Consulta para obtener los pedidos pendientes (similar a la que usa el dashboard)
+SELECT 
+  p.PEDIDO AS pedido,
+  c.NOMBRE AS cliente,
+  p.FECHA AS fecha,
+  p.HORA AS hora,
+  v.NOMBRE AS vendedora,
+  p.ESTATUS AS estatus
+FROM 
+  PEDIDOS p
+JOIN 
+  CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
+JOIN
+  VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
+WHERE 
+  p.ESTATUS = 'P' OR p.ESTATUS = 'En proceso'
+ORDER BY 
+  p.FECHA DESC, p.HORA DESC;
+
+
+3. VERIFICAR NOMBRES EXACTOS DE TABLAS Y CAMPOS
+---------------------------------------------
+
+# Es posible que los nombres de tablas y campos varíen según la configuración específica de Microsip.
+# Estas consultas te ayudarán a encontrar los nombres correctos:
+
+# Ver todas las tablas:
+SELECT RDB$RELATION_NAME FROM RDB$RELATIONS WHERE RDB$SYSTEM_FLAG = 0 ORDER BY 1;
+
+# Ver los campos de una tabla específica (sustituye PEDIDOS por el nombre de la tabla que quieras ver):
+SELECT
+  r.RDB$FIELD_NAME AS campo,
+  f.RDB$FIELD_TYPE AS tipo
+FROM
+  RDB$RELATION_FIELDS r
+  JOIN RDB$FIELDS f ON r.RDB$FIELD_SOURCE = f.RDB$FIELD_NAME
+WHERE
+  r.RDB$RELATION_NAME = 'PEDIDOS'
+ORDER BY
+  r.RDB$FIELD_POSITION;
+
+
+4. SOLUCIÓN DE PROBLEMAS COMUNES
+------------------------------
+
+# Si recibes el error "Your user name and password are not defined":
+- Verifica que el usuario SYSDBA tenga contraseña configurada en el servidor.
+- En algunas instalaciones, la contraseña predeterminada es 'masterkey'.
+- Consulta con el administrador de la base de datos por las credenciales correctas.
+
+# Si recibes el error "I/O error" o "Connection rejected":
+- Verifica que el servidor esté en línea y accesible desde tu red.
+- Comprueba que no haya un firewall bloqueando la conexión.
+- Verifica que la ruta a la base de datos sea correcta.
+
+======================================================
+Desarrollo: Sergio Dovalina (checodovalina@gmail.com)
+Exclusivo para Clic Laguna © 2025
+======================================================
