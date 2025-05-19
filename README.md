@@ -48,6 +48,18 @@ Para modificar la configuración del sistema:
 2. Ve a la sección de "Configuración" en el menú superior
 3. Ajusta los parámetros según sea necesario
 
+### Conexión Remota al Servidor
+El dashboard está preconfigurado para conectarse al servidor:
+- Servidor: forticlean.ddns.net
+- Ruta BD: C:/Microsip/EMPRESA.FDB
+- Usuario: SYSDBA
+- Contraseña: 050587
+
+También puedes acceder al servidor por escritorio remoto:
+- Dirección: forticlean.ddns.net:4040
+- Usuario: Administrador
+- Contraseña: Forti2021+
+
 ## Solución de Problemas
 - **Error de conexión a la base de datos**: Verifica que los datos de conexión sean correctos y que el cliente Firebird esté instalado correctamente.
 - **Problemas de acceso**: Asegúrate de estar usando las credenciales correctas.

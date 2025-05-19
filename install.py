@@ -110,7 +110,8 @@ def configure_database():
     print("\nIntroduce los datos de conexión a la base de datos Microsip:")
     
     # Server puede ser localhost o una IP
-    server = input("Servidor (localhost o IP): ") or "localhost"
+    default_server = "forticlean.ddns.net"
+    server = input(f"Servidor [{default_server}]: ") or default_server
     
     # Ruta a la base de datos
     default_path = r"C:\Microsip\EMPRESA.FDB"
@@ -121,8 +122,10 @@ def configure_database():
         db_path = f'"{db_path}"'
     
     # Usuario y contraseña (valores por defecto para Firebird)
-    user = input("Usuario [SYSDBA]: ") or "SYSDBA"
-    password = input("Contraseña [masterkey]: ") or "masterkey"
+    default_user = "SYSDBA"
+    user = input(f"Usuario [{default_user}]: ") or default_user
+    default_password = "050587"
+    password = input(f"Contraseña [{default_password}]: ") or default_password
     
     # Crear o actualizar la sección de base de datos en el archivo de configuración
     from config import load_config, update_config

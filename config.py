@@ -6,9 +6,9 @@ import logging
 DEFAULT_CONFIG = {
     'database': {
         'driver': 'Firebird/InterBase(r) driver',
-        'dsn': 'localhost:C:/path/to/database.fdb',
+        'dsn': 'forticlean.ddns.net:C:/Microsip/EMPRESA.FDB',
         'user': 'SYSDBA',
-        'password': 'masterkey',
+        'password': '050587',
         'charset': 'UTF8',
         'query': """
             SELECT 
