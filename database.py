@@ -64,44 +64,69 @@ def test_connection():
 
 def get_pending_orders():
     """
-    Get pending orders from the Microsip database
+    Get pending orders from the Microsip database or from a JSON file
     """
     try:
         conn = create_connection()
         
-        # Si no hay conexión, mostrar datos de ejemplo
-        if conn is None:
-            return _get_sample_orders()
+        # Primer intento: conectar directamente a la base de datos
+        if conn is not None:
+            cursor = conn.cursor()
             
-        cursor = conn.cursor()
-        
-        # Usar la consulta definida en el archivo de configuración
-        query = db_config.get('query')
-        
-        cursor.execute(query)
-        
-        # Convertir resultados a lista de diccionarios
-        columns = [column[0].lower() for column in cursor.description]
-        orders = []
-        for row in cursor.fetchall():
-            # Crear un diccionario con los valores de la fila
-            order_dict = dict(zip(columns, row))
+            # Usar la consulta definida en el archivo de configuración
+            query = db_config.get('query')
             
-            # Formatear fecha y hora correctamente si es necesario
-            if isinstance(order_dict.get('fecha'), datetime.datetime):
-                order_dict['fecha'] = order_dict['fecha'].date()
+            cursor.execute(query)
+            
+            # Convertir resultados a lista de diccionarios
+            columns = [column[0].lower() for column in cursor.description]
+            orders = []
+            for row in cursor.fetchall():
+                # Crear un diccionario con los valores de la fila
+                order_dict = dict(zip(columns, row))
                 
-            # Garantizar que todos los campos necesarios estén presentes
-            if 'pedido' not in order_dict and 'folio' in order_dict:
-                order_dict['pedido'] = f"#{order_dict['folio']}"
+                # Formatear fecha y hora correctamente si es necesario
+                if isinstance(order_dict.get('fecha'), datetime.datetime):
+                    order_dict['fecha'] = order_dict['fecha'].date()
+                    
+                # Garantizar que todos los campos necesarios estén presentes
+                if 'pedido' not in order_dict and 'folio' in order_dict:
+                    order_dict['pedido'] = f"#{order_dict['folio']}"
+                    
+                orders.append(order_dict)
+            
+            cursor.close()
+            conn.close()
+            
+            logging.info(f"Retrieved {len(orders)} pending orders from database")
+            return orders
+        
+        # Segundo intento: buscar archivo JSON con datos exportados
+        import os
+        import json
+        json_path = "datos_pedidos.json"
+        
+        if os.path.exists(json_path):
+            try:
+                with open(json_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
                 
-            orders.append(order_dict)
+                if 'pedidos' in data and isinstance(data['pedidos'], list):
+                    pedidos = data['pedidos']
+                    timestamp = data.get('timestamp', 'desconocido')
+                    logging.info(f"Usando datos del archivo JSON (actualizado: {timestamp})")
+                    logging.info(f"Se cargaron {len(pedidos)} pedidos del archivo")
+                    return pedidos
+                else:
+                    logging.error("El archivo JSON no tiene el formato esperado")
+            except Exception as json_error:
+                logging.error(f"Error al leer archivo JSON: {str(json_error)}")
+        else:
+            logging.warning(f"Archivo JSON no encontrado en: {json_path}")
         
-        cursor.close()
-        conn.close()
-        
-        logging.info(f"Retrieved {len(orders)} pending orders from database")
-        return orders
+        # Si ambos métodos fallan, usar datos de muestra
+        logging.warning("No se pudo obtener datos reales, usando datos de muestra")
+        return _get_sample_orders()
     except Exception as e:
         logging.error(f"Error fetching pending orders: {str(e)}")
         logging.warning("Falling back to sample data")

@@ -1,0 +1,64 @@
+=====================================================
+INSTRUCCIONES DE USO - DASHBOARD DE PEDIDOS PENDIENTES
+=====================================================
+
+Para facilitar la visualización de los pedidos pendientes desde tu servidor, 
+hemos creado una solución simple que consta de dos partes:
+
+PARTE 1: EXPORTAR DATOS (EN TU MÁQUINA LOCAL)
+---------------------------------------------
+
+1. Asegúrate de tener instalado Python 3.8 o superior en tu computadora.
+
+2. Instala el cliente Firebird y las dependencias necesarias:
+   - Descarga e instala Firebird desde: https://firebirdsql.org/en/firebird-3-0/
+   - Instala las dependencias: pip install fdb pyyaml
+
+3. Descarga estos archivos a tu computadora:
+   - exportar_datos.py
+   - config.py
+   - config.yaml
+
+4. Ejecuta el script de exportación:
+   - Abre una terminal/cmd
+   - Navega a la carpeta donde guardaste los archivos
+   - Ejecuta: python exportar_datos.py
+
+5. El script generará un archivo llamado "datos_pedidos.json" con los pedidos actuales
+
+PARTE 2: VISUALIZAR DATOS (EN EL SERVIDOR WEB)
+---------------------------------------------
+
+1. Sube el archivo "datos_pedidos.json" generado al servidor donde está alojado el dashboard
+   - Puedes usar FTP, SFTP o simplemente copiar y pegar el contenido si tienes acceso directo
+
+2. El dashboard detectará automáticamente el archivo y mostrará los datos
+   - No necesitas reiniciar ni hacer ninguna configuración adicional
+   - Los datos se mostrarán en el dashboard la próxima vez que se refresque
+
+AUTOMATIZACIÓN (OPCIONAL)
+------------------------
+
+Para mantener los datos actualizados, puedes:
+
+1. Programar la ejecución del script en tu computadora local:
+   - En Windows: Usar el Programador de tareas para ejecutar el script periódicamente
+   - En Mac/Linux: Configurar un cron job
+
+2. Configurar la transferencia automática del archivo JSON al servidor web
+
+DATOS DE CONEXIÓN
+----------------
+
+El script está preconfigurado para conectarse a:
+- Servidor: forticlean.ddns.net
+- Base de datos: C:/Microsip/EMPRESA.FDB
+- Usuario: SYSDBA
+- Contraseña: 050587
+
+Si necesitas modificar estos valores, edita el archivo config.yaml antes de ejecutar el script.
+
+=====================================================
+Desarrollo: Sergio Dovalina (checodovalina@gmail.com)
+Exclusivo para Clic Laguna © 2025
+=====================================================
