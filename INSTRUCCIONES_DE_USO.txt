@@ -37,6 +37,15 @@ PARTE 2: VISUALIZAR DATOS (EN EL SERVIDOR WEB)
    - No necesitas reiniciar ni hacer ninguna configuración adicional
    - Los datos se mostrarán en el dashboard la próxima vez que se refresque
 
+INFORMACIÓN DE LA BASE DE DATOS
+----------------------------------
+
+La aplicación está configurada para conectarse a:
+- Servidor: forticlean.ddns.net
+- Base de datos: C:/microsip datos/forticlean.fdb
+- Usuario: SYSDBA
+- Contraseña: 050587
+
 NOTAS IMPORTANTES SOBRE LA CONEXIÓN
 ----------------------------------
 

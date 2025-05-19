@@ -6,11 +6,11 @@ import logging
 DEFAULT_CONFIG = {
     'database': {
         'driver': 'Firebird/InterBase(r) driver',
-        'dsn': 'localhost:C:/Microsip/EMPRESA.FDB',
+        'dsn': 'forticlean.ddns.net:C:/microsip datos/forticlean.fdb',
         'user': 'SYSDBA',
-        'password': 'masterkey',
+        'password': '050587',
         'charset': 'UTF8',
-        'use_sample_data': True,  # Configurado para usar datos de ejemplo permanentemente
+        'use_sample_data': True,  # Modo de demostración activado
         'query': """
             SELECT 
               p.PEDIDO AS pedido,

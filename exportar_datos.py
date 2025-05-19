@@ -118,7 +118,7 @@ def solicitar_credenciales():
     # Crear configuración temporal
     config_temp = {
         'database': {
-            'dsn': f"{servidor}:{ruta_bd}",
+            'dsn': f"{servidor}:C:/microsip datos/forticlean.fdb",
             'user': usuario,
             'password': contrasena,
             'charset': 'UTF8',
