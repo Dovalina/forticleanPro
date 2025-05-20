@@ -1,17 +1,34 @@
 application:
   refresh_interval: 300
   title: Dashboard de Pedidos Pendientes
+
 database:
   charset: WIN1252
   driver: Firebird
-  dsn: localhost:C:/Microsip/EMPRESA.FDB
-  password: masterkey
-  query: "SELECT \n  p.PEDIDO AS pedido,\n  c.NOMBRE AS cliente,\n  p.FECHA AS fecha,\n\
-    \  p.HORA AS hora,\n  v.NOMBRE AS vendedora,\n  p.ESTATUS AS estatus\nFROM \n\
-    \  PEDIDOS p\nJOIN \n  CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID\nJOIN\n  VENDEDORES\
-    \ v ON p.VENDEDOR_ID = v.VENDEDOR_ID\nWHERE \n  p.ESTATUS = 'P' OR p.ESTATUS =\
-    \ 'En proceso'\nORDER BY \n  p.FECHA DESC, p.HORA DESC\n"
+  dsn: localhost:C:/microsip datos/forticlean.fdb
+  password: 050587
+  query: |
+    SELECT 
+      p.folio AS pedido,
+      c.NOMBRE AS cliente,
+      p.FECHA AS fecha,
+      p.HORA AS hora,
+      v.NOMBRE AS vendedora,
+      p.ESTATUS AS estatus
+    FROM 
+      DOCTOS_VE p
+      LEFT JOIN CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
+      LEFT JOIN VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
+    WHERE 
+      p.tipo_docto = 'P' 
+      AND (
+        p.ESTATUS = 'P'  
+        OR (p.ESTATUS = 'S' AND p.FECHA = CURRENT_DATE)
+      )
+    ORDER BY 
+      p.ESTATUS, p.FECHA DESC, p.HORA DESC
   user: SYSDBA
+
 users:
   admin:
     is_superadmin: true
