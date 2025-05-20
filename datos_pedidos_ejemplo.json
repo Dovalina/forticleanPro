@@ -1,46 +1,982 @@
 {
-  "timestamp": "2025-05-19T15:25:30.123456",
+  "timestamp": "2025-05-19T23:03:32.151749",
   "pedidos": [
     {
-      "pedido": "#2501",
-      "cliente": "Distribuidora El Norte",
-      "fecha": "2025-05-18",
-      "hora": "09:15:22",
-      "vendedora": "María López",
-      "estatus": "Pendiente"
-    },
-    {
-      "pedido": "#2502",
-      "cliente": "Supermercados González",
-      "fecha": "2025-05-18",
-      "hora": "10:05:45",
-      "vendedora": "Juan Pérez",
-      "estatus": "En proceso"
-    },
-    {
-      "pedido": "#2503",
-      "cliente": "Tiendas Laguna",
-      "fecha": "2025-05-18",
-      "hora": "11:30:12",
-      "vendedora": "Ana Morales",
-      "estatus": "Pendiente"
-    },
-    {
-      "pedido": "#2504",
-      "cliente": "Comercial del Bajío",
+      "pedido": "000024794",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
       "fecha": "2025-05-19",
-      "hora": "08:45:07",
-      "vendedora": "Carlos Sánchez",
-      "estatus": "Pendiente"
+      "hora": "12:36:19.241000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
     },
     {
-      "pedido": "#2505",
-      "cliente": "Refaccionaria Torreón",
+      "pedido": "000024792",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
       "fecha": "2025-05-19",
-      "hora": "09:20:55",
-      "vendedora": "Laura Torres",
-      "estatus": "En proceso"
+      "hora": "12:29:31.980000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024790",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "12:20:11.127000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024789",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "12:16:06.157000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024784",
+      "cliente": "BENEFICENCIA ESPAÑOLA DE LA LAGUNA ",
+      "fecha": "2025-05-19",
+      "hora": "12:08:49.319000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024788",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "12:00:45.749000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024791",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "12:00:35.339000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024787",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "11:41:11.664000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024786",
+      "cliente": "GUILLERMO MARTINEZ AVILA",
+      "fecha": "2025-05-19",
+      "hora": "11:35:31.096000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024785",
+      "cliente": "MARISCOS NM SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "10:48:54",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024782",
+      "cliente": "SERVICIOS E INSUMOS DE MEXICO SA DE CV",
+      "fecha": "2025-05-19",
+      "hora": "10:47:28.110000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024780",
+      "cliente": "JUAN CARLOS GALINDO FIERRO ",
+      "fecha": "2025-05-19",
+      "hora": "10:40:20.922000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024781",
+      "cliente": "MARISCOS DE LA LAGUNA SA DE CV ",
+      "fecha": "2025-05-19",
+      "hora": "09:54:57.150000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024778",
+      "cliente": "CAMBHER NORESTE SA DE CV",
+      "fecha": "2025-05-17",
+      "hora": "11:17:44.446000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024777",
+      "cliente": "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE TORREON COAHUILA",
+      "fecha": "2025-05-17",
+      "hora": "11:07:45.598000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024776",
+      "cliente": "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE TORREON COAHUILA",
+      "fecha": "2025-05-17",
+      "hora": "10:10:57.415000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024773",
+      "cliente": "TEN-TRANSPORTES TRC",
+      "fecha": "2025-05-17",
+      "hora": "09:49:45.191000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024771",
+      "cliente": "QR TORREON",
+      "fecha": "2025-05-17",
+      "hora": "09:11:43.567000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024770",
+      "cliente": "GON-DI SISTEMAS Y EQUIPOS DE BOMBEO ",
+      "fecha": "2025-05-16",
+      "hora": "17:29:05.828000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024769",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2025-05-16",
+      "hora": "17:06:20.549000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024767",
+      "cliente": "RENE AARON FERNANDEZ MARTINEZ",
+      "fecha": "2025-05-16",
+      "hora": "16:58:27.246000",
+      "vendedora": "REDES Y PAGINAS",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024763",
+      "cliente": "LOS DENTISTAS DEL NORESTE",
+      "fecha": "2025-05-16",
+      "hora": "14:20:12.832000",
+      "vendedora": "ALEXIS GONZALEZ ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024760",
+      "cliente": "ESTETICA INDUSTRIAL MEXICANA, SA DE CV ",
+      "fecha": "2025-05-16",
+      "hora": "12:13:47.547000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024746",
+      "cliente": "KARLA ADRIANA NUÑEZ GALINDO",
+      "fecha": "2025-05-15",
+      "hora": "13:23:33.255000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024742",
+      "cliente": "GUSTAVO IXTA HERRERA ",
+      "fecha": "2025-05-15",
+      "hora": "13:14:00.232000",
+      "vendedora": "ALEXIS GONZALEZ ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024726",
+      "cliente": "LIMPIEZA JORED ",
+      "fecha": "2025-05-15",
+      "hora": "09:36:07.874000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024712",
+      "cliente": "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE TORREON COAHUILA",
+      "fecha": "2025-05-14",
+      "hora": "15:57:02.273000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024706",
+      "cliente": "GRUPO RESTAURANTERO BCN",
+      "fecha": "2025-05-14",
+      "hora": "12:45:33.351000",
+      "vendedora": "ALEXIS GONZALEZ ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024695",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2025-05-14",
+      "hora": "10:58:15.241000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024687",
+      "cliente": "INSTITUTO MUNICIPAL DEL DEPORTE DE TORREON",
+      "fecha": "2025-05-13",
+      "hora": "14:47:52.888000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024686",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2025-05-13",
+      "hora": "14:17:21.842000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024685",
+      "cliente": "FARMACIA SANE C SA DE CV ",
+      "fecha": "2025-05-13",
+      "hora": "12:52:08.971000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024625",
+      "cliente": "LAZARO ALIMENTOS S.A. DE C.V. ",
+      "fecha": "2025-05-12",
+      "hora": "10:24:44.356000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024531",
+      "cliente": "KLYNS FARMACIAS SA DE CV",
+      "fecha": "2025-05-08",
+      "hora": "10:15:37.878000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024395",
+      "cliente": "GUILLERMO MARTINEZ AVILA",
+      "fecha": "2025-05-05",
+      "hora": "11:23:53.314000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024370",
+      "cliente": "INSTITUTO ESTATAL DEL DEPORTE DE COAHUILA DE ZARAGOZA ",
+      "fecha": "2025-05-02",
+      "hora": "16:06:37.062000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024357",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2025-05-02",
+      "hora": "11:14:57.187000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024349",
+      "cliente": "GRUPO RESTAURANTERO BCN",
+      "fecha": "2025-05-02",
+      "hora": "09:52:43.237000",
+      "vendedora": "ALEXIS GONZALEZ ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024328",
+      "cliente": "CRUZ ROJA MEXICANA, I.A.P",
+      "fecha": "2025-04-30",
+      "hora": "10:12:49.191000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024332",
+      "cliente": "PARRAS VALLEY SPR. DE RL DE CV",
+      "fecha": "2025-04-30",
+      "hora": "09:28:47.074000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024323",
+      "cliente": "DIMAP INDUSTRIAL SA DE CV",
+      "fecha": "2025-04-29",
+      "hora": "11:49:30.302000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024267",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2025-04-28",
+      "hora": "13:48:44.130000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024266",
+      "cliente": "BENEFICENCIA ESPAÑOLA DE LA LAGUNA ",
+      "fecha": "2025-04-28",
+      "hora": "13:28:01.268000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024151",
+      "cliente": "LAZARO ALIMENTOS S.A. DE C.V. ",
+      "fecha": "2025-04-24",
+      "hora": "11:02:51.329000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024116",
+      "cliente": "ESTEBAN LUNA CHAVEZ",
+      "fecha": "2025-04-22",
+      "hora": "16:54:04.700000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024027",
+      "cliente": "ALBERTO GONZALEZ SOTO",
+      "fecha": "2025-04-15",
+      "hora": "11:40:57.715000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023956",
+      "cliente": "ENRIQUE GUERRERO PEYRO ",
+      "fecha": "2025-04-10",
+      "hora": "13:28:07.044000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023939",
+      "cliente": "CAMIONERA CATOSA SA DE CV ",
+      "fecha": "2025-04-10",
+      "hora": "11:34:03.627000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023933",
+      "cliente": "INSTITUTO ESTATAL DEL DEPORTE DE COAHUILA DE ZARAGOZA ",
+      "fecha": "2025-04-10",
+      "hora": "10:31:35.094000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024249",
+      "cliente": "GUILLERMO MARTINEZ AVILA",
+      "fecha": "2025-04-03",
+      "hora": "10:04:02.157000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023592",
+      "cliente": "CYPROS CONVEYORS",
+      "fecha": "2025-03-28",
+      "hora": "16:43:27.331000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023521",
+      "cliente": "SISTEMA MUNICIPAL DE AGUAS Y SANEAMIENTO DE TORREON COAHUILA",
+      "fecha": "2025-03-25",
+      "hora": "13:16:06.469000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023377",
+      "cliente": "BENEFICENCIA ESPAÑOLA DE LA LAGUNA ",
+      "fecha": "2025-03-20",
+      "hora": "16:14:10.891000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023302",
+      "cliente": "SISTEMA MUNICIPAL DE AGUAS Y SANEAMIENTO DE TORREON COAHUILA",
+      "fecha": "2025-03-18",
+      "hora": "09:21:31.452000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000023224",
+      "cliente": "SISTEMA MUNICIPAL DE AGUAS Y SANEAMIENTO DE TORREON COAHUILA",
+      "fecha": "2025-03-12",
+      "hora": "09:11:39.102000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022848",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2025-02-26",
+      "hora": "17:12:43.717000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022783",
+      "cliente": "BENEFICENCIA ESPAÑOLA DE LA LAGUNA ",
+      "fecha": "2025-02-25",
+      "hora": "15:54:50.340000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022679",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2025-02-21",
+      "hora": "10:38:59.237000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022536",
+      "cliente": "SISTEMA PARA EL DESARROLLO INTEGRAL DE LA FAMILIA DEL MUNICIPIO DE TORREON COAHUILA",
+      "fecha": "2025-02-14",
+      "hora": "13:23:19.396000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022053",
+      "cliente": "CARLOS VARA ESCOBARETT",
+      "fecha": "2025-01-27",
+      "hora": "10:11:55.632000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022040",
+      "cliente": "REGINA GUERRERO OLVERA ",
+      "fecha": "2025-01-27",
+      "hora": "09:05:18.330000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000022036",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2025-01-25",
+      "hora": "11:02:10.699000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021859",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2025-01-15",
+      "hora": "12:23:55.670000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021860",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2025-01-15",
+      "hora": "12:04:47.925000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021855",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2025-01-15",
+      "hora": "09:31:58.119000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021697",
+      "cliente": "BENEFICENCIA ESPAÑOLA DE LA LAGUNA ",
+      "fecha": "2025-01-09",
+      "hora": "13:43:48.952000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021699",
+      "cliente": "ARMOT SEGURIDAD PRIVADA Y SERVICIOS INSTITUCIONALES ",
+      "fecha": "2025-01-09",
+      "hora": "10:44:37.947000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021506",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2025-01-02",
+      "hora": "11:25:45.770000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000021097",
+      "cliente": "CONSEJO DE LA JUDICATURA FEDERAL",
+      "fecha": "2024-12-09",
+      "hora": "17:27:38.581000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000020846",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2024-12-02",
+      "hora": "14:39:29.635000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000020395",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2024-11-12",
+      "hora": "14:18:29.314000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000020363",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-11-11",
+      "hora": "17:47:01.473000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000020273",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2024-11-09",
+      "hora": "10:11:31.219000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000020039",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-11-01",
+      "hora": "11:48:50.360000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000019417",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-10-07",
+      "hora": "16:40:44.340000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000019416",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-10-07",
+      "hora": "16:38:20.427000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000018289",
+      "cliente": "CRUZ ROJA MEXICANA, I.A.P",
+      "fecha": "2024-08-23",
+      "hora": "10:41:27.030000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000018245",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-08-22",
+      "hora": "12:16:00.532000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000017408",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2024-07-18",
+      "hora": "09:20:43.269000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000017122",
+      "cliente": "MARIA CRISTINA MARTINEZ CARMONA",
+      "fecha": "2024-07-06",
+      "hora": "11:14:58.776000",
+      "vendedora": "ALEXIS GONZALEZ ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000016267",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2024-05-31",
+      "hora": "17:20:10.879000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000015867",
+      "cliente": "KLYNS FARMACIAS SA DE CV",
+      "fecha": "2024-05-11",
+      "hora": "10:37:01.658000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000015586",
+      "cliente": "KLYNS FARMACIAS SA DE CV",
+      "fecha": "2024-04-30",
+      "hora": "14:22:09.477000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000015583",
+      "cliente": "KLYNS FARMACIAS SA DE CV",
+      "fecha": "2024-04-30",
+      "hora": "14:09:48.855000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000015489",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2024-04-25",
+      "hora": "11:44:54.259000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000013541",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2024-02-08",
+      "hora": "13:36:19.149000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012621",
+      "cliente": "ENRIQUE GUERRERO PEYRO ",
+      "fecha": "2023-12-28",
+      "hora": "11:03:01.935000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012615",
+      "cliente": "QR TORREON",
+      "fecha": "2023-12-27",
+      "hora": "17:27:55.926000",
+      "vendedora": "KAROLA MORENO ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012544",
+      "cliente": "CRUZ ROJA MEXICANA, I.A.P",
+      "fecha": "2023-12-20",
+      "hora": "13:29:37.869000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012433",
+      "cliente": "COLABORATIVO PLOG SAPI DE CV ",
+      "fecha": "2023-12-15",
+      "hora": "17:22:45.775000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012424",
+      "cliente": "MARIJOSE GUERRERO MARTINEZ",
+      "fecha": "2023-12-15",
+      "hora": "14:26:53.438000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012333",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2023-12-12",
+      "hora": "14:27:23.125000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012277",
+      "cliente": "GASA FABRICACIONES SA DE CV ",
+      "fecha": "2023-12-09",
+      "hora": "09:37:29.471000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000012202",
+      "cliente": "JIBE CONSTRUCCIONES Y PAVIMENTOS SA DE CV ",
+      "fecha": "2023-12-05",
+      "hora": "11:33:06.749000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011983",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2023-11-25",
+      "hora": "13:10:04.745000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011982",
+      "cliente": "GAFI ABARROTES SA DE CV ",
+      "fecha": "2023-11-25",
+      "hora": "10:50:54.462000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011826",
+      "cliente": "P C&B FACILITY MANAGEMENT SOLUTIONS SA DE CV  ",
+      "fecha": "2023-11-17",
+      "hora": "13:02:01.323000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011694",
+      "cliente": "INSTITUTO MUNICIPAL DEL DEPORTE DE TORREON",
+      "fecha": "2023-11-13",
+      "hora": "11:58:28.043000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011359",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2023-10-25",
+      "hora": "16:49:45.043000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000011354",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2023-10-25",
+      "hora": "14:53:54.282000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000010939",
+      "cliente": "KINGANS EUROCAFE SA DE CV ",
+      "fecha": "2023-10-05",
+      "hora": "12:29:12.421000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000010038",
+      "cliente": "MARIJOSE GUERRERO MARTINEZ",
+      "fecha": "2023-08-19",
+      "hora": "13:57:59.854000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000009844",
+      "cliente": "ANTONIO GUERRERO PEIRO",
+      "fecha": "2023-08-10",
+      "hora": "18:22:11.847000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008998",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2023-06-29",
+      "hora": "17:05:53.439000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008652",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2023-06-12",
+      "hora": "12:20:14.608000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008624",
+      "cliente": "GLOBAL RENTAL & FINANCING MOTORS SA DE CV ",
+      "fecha": "2023-06-05",
+      "hora": "19:40:20.710000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008511",
+      "cliente": "GLOBAL RENTAL & FINANCING MOTORS SA DE CV ",
+      "fecha": "2023-06-02",
+      "hora": "12:50:28.888000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008251",
+      "cliente": "TESORERIA MPAL DE TORREON ",
+      "fecha": "2023-05-19",
+      "hora": "10:12:28.330000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000008117",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2023-05-12",
+      "hora": "09:10:23.779000",
+      "vendedora": "FORTICLEAN",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000007970",
+      "cliente": "JOSE FERNANDO ESTRADA BERLANGA",
+      "fecha": "2023-05-04",
+      "hora": "12:17:05.801000",
+      "vendedora": null,
+      "estatus": "P"
+    },
+    {
+      "pedido": "000007876",
+      "cliente": "PUBLICO EN GENERAL ",
+      "fecha": "2023-04-28",
+      "hora": "17:33:13.856000",
+      "vendedora": "TIENDA 2023",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000007870",
+      "cliente": "PUBLICO EN GENERAL ",
+      "fecha": "2023-04-28",
+      "hora": "15:04:38.624000",
+      "vendedora": "TIENDA 2023",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000007571",
+      "cliente": "KLYNS FARMACIAS SA DE CV",
+      "fecha": "2023-04-13",
+      "hora": "14:34:04.856000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000007097",
+      "cliente": "CLIENTE NO IDENTIFICADO ",
+      "fecha": "2023-03-16",
+      "hora": "17:35:30.871000",
+      "vendedora": null,
+      "estatus": "P"
+    },
+    {
+      "pedido": "000005662",
+      "cliente": "INTERGAS DEL NORTE SA DE CV ",
+      "fecha": "2022-12-28",
+      "hora": "14:43:59.113000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000005611",
+      "cliente": "VIÑEDOS ",
+      "fecha": "2022-12-23",
+      "hora": "14:01:57.456000",
+      "vendedora": null,
+      "estatus": "P"
+    },
+    {
+      "pedido": "000002777",
+      "cliente": "GO MERAKI CONSORCIO SA DE CV",
+      "fecha": "2022-07-09",
+      "hora": "12:46:33.934000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000002325",
+      "cliente": "GO MERAKI CONSORCIO SA DE CV",
+      "fecha": "2022-06-10",
+      "hora": "14:20:27.673000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000001761",
+      "cliente": "GO MERAKI CONSORCIO SA DE CV",
+      "fecha": "2022-05-04",
+      "hora": "09:10:00.874000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "P"
+    },
+    {
+      "pedido": "000024793",
+      "cliente": "RICARDO CASAS LUNA",
+      "fecha": "2025-05-19",
+      "hora": "13:04:26.273000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "S"
+    },
+    {
+      "pedido": "000024783",
+      "cliente": "AGRICOLA LAGUNA AMG,SPRL DE RL ",
+      "fecha": "2025-05-19",
+      "hora": "10:53:02.718000",
+      "vendedora": "ARACELY SILVA ",
+      "estatus": "S"
+    },
+    {
+      "pedido": "000024779",
+      "cliente": "CARLOS CRISTOBAL CRUZ SOTO ",
+      "fecha": "2025-05-19",
+      "hora": "09:26:04.957000",
+      "vendedora": "LOURDES HERNANDEZ",
+      "estatus": "S"
     }
   ],
-  "total": 5
+  "total": 122
 }
