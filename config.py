@@ -13,22 +13,24 @@ DEFAULT_CONFIG = {
         'use_sample_data': True,  # Modo de demostración activado
         'query': """
             SELECT 
-              p.PEDIDO AS pedido,
+              p.folio AS pedido,
               c.NOMBRE AS cliente,
               p.FECHA AS fecha,
               p.HORA AS hora,
               v.NOMBRE AS vendedora,
               p.ESTATUS AS estatus
             FROM 
-              PEDIDOS p
-            JOIN 
-              CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
-            JOIN
-              VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
+              DOCTOS_VE p
+              LEFT JOIN CLIENTES c ON p.CLIENTE_ID = c.CLIENTE_ID
+              LEFT JOIN VENDEDORES v ON p.VENDEDOR_ID = v.VENDEDOR_ID
             WHERE 
-              p.ESTATUS = 'P' OR p.ESTATUS = 'En proceso'
+              p.tipo_docto = 'P' 
+              AND (
+                p.ESTATUS = 'P'  
+                OR (p.ESTATUS = 'S' AND p.FECHA = CURRENT_DATE)
+              )
             ORDER BY 
-              p.FECHA DESC, p.HORA DESC
+              p.ESTATUS, p.FECHA DESC, p.HORA DESC
         """
     },
     'application': {
